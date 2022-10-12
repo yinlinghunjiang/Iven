@@ -1,0 +1,10 @@
+{
+    "tailapi":{
+        "key":"",//您的TailApi key 类型：str
+        "qq":""//您申请TailApi的QQ 类型：str
+    },
+    "bot":{
+        "qq": 0,//您Bot的QQ号 类型：int
+        "verifykey":""//mah的verifykey
+    }
+}

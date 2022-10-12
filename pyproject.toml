@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "iven"
+version = "0.1.0"
+description = "A simple transfur bot powered by ariadne"
+authors = ["yinlinghunjiang <1581647952@qq.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+graia-ariadne = {extras = ["standard"], version = "^0.9.6"}
+graia-saya = "^0.0.16"
+urllib3 = "^1.26.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "tuna-tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
