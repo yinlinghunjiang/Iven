@@ -11,7 +11,6 @@ from graia.ariadne.message.parser.twilight import (
 )
 import utils.transfur
 channel = Channel.current()
-
 Tailapi=utils.transfur.Tailapi("./config/bot.json")#call only once
 async def img_resp(url:str) -> bytes:
     session = Ariadne.service.client_session

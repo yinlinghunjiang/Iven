@@ -1,8 +1,10 @@
-<center>![icon](https://s1.328888.xyz/2022/10/11/8LTgg.png)</center>
-<center><h1>Iven</h1>
-Iven, a simple, light transfur bot powered by Ariadne
+<div align=center><img src="https://s1.328888.xyz/2022/10/11/8LTgg.png" width = "350" height = "350"></center>
+<h1>Iven</h1>
 
-![lable1](https://img.shields.io/static/v1?label=python&message=3.10+&color=green) ![lable2](https://img.shields.io/static/v1?label=powered%20by&message=Ariadne&color=red)</center>
+Iven, a simple, light transfur bot powered by Ariadne
+<br><br>
+<img src="https://img.shields.io/static/v1?label=python&message=3.10+&color=green"> <img src="https://img.shields.io/static/v1?label=powered%20by&message=Ariadne&color=red">
+</div>
 
 ## 📕 Quick start: ##
 <br>
@@ -20,6 +22,7 @@ Iven, a simple, light transfur bot powered by Ariadne
 - [x] TailApi
 
 </details>
+
 ## 🐌更新日志 ##
 
 <details>
@@ -40,7 +43,7 @@ Iven, a simple, light transfur bot powered by Ariadne
 
 此项目仅用于学习交流，请勿用于非法用途
 
-##🙇‍致谢
+## 🙇‍致谢
 
 TailApi，提供图片以及数据
 

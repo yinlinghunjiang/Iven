@@ -1,7 +1,7 @@
 import datetime
 import hashlib
 from typing import List, Union, Any
-
+import os
 import urllib3
 import json
 
@@ -39,12 +39,7 @@ class Tailapi:
         http = urllib3.PoolManager()
         resp = http.request(
             "GET",
-            "https://api.tail.icu/api/v2/getFursuitRand?qq="
-            + sign[1]
-            + "&timestamp="
-            + str(ts)
-            + "&sign="
-            + prsign,
+            "https://api.tail.icu/api/v2/getFursuitRand?qq={}&timestamp={}&sign={}".format(sign[1],str(ts),prsign)
         )  # get方式请求
         text = json.loads(resp._body)
         return text
@@ -56,14 +51,7 @@ class Tailapi:
         http = urllib3.PoolManager()
         resp = http.request(
             "GET",
-            "https://api.tail.icu/api/v2/getFursuitByName?qq="
-            + sign[1]
-            + "&timestamp="
-            + str(ts)
-            + "&sign="
-            + prsign
-            + "&name="
-            + name,
+            "https://api.tail.icu/api/v2/getFursuitByName?qq={}&timestamp={}&sign={}&name={}".format(sign[1],str(ts),prsign,name)
         )
         text = json.loads(resp._body)
         return text
@@ -76,14 +64,7 @@ class Tailapi:
         http = urllib3.PoolManager()
         resp = http.request(
             "GET",
-            "https://api.tail.icu/api/v2/getFursuitByID?qq="
-            + sign[1]
-            + "&timestamp="
-            + str(ts)
-            + "&sign="
-            + prsign
-            + "&fid="
-            + furid,
+            "https://api.tail.icu/api/v2/getFursuitByID?qq={}&timestamp={}&sign={}&fid={}".format(sign[1],str(ts),prsign,furid)
         )
         text = json.loads(resp._body)
         return text
@@ -96,12 +77,7 @@ class Tailapi:
         http = urllib3.PoolManager()
         resp = http.request(
             "GET",
-            "https://api.tail.icu/api/v2/DailyFursuit/Rand?qq="
-            + sign[1]
-            + "&timestamp="
-            + str(ts)
-            + "&sign="
-            + prsign,
+            "https://api.tail.icu/api/v2/DailyFursuit/Rand?qq={}&timestamp={}&sign={}".format(sign[1],str(ts),prsign)
         )
         text = json.loads(resp._body)
         return text
@@ -114,14 +90,7 @@ class Tailapi:
         http = urllib3.PoolManager()
         resp = http.request(
             "GET",
-            "https://api.tail.icu/api/v2/DailyFursuit/id?qq="
-            + sign[1]
-            + "&timestamp="
-            + str(ts)
-            + "&sign="
-            + prsign
-            + "&id="
-            + dayid,
+            "https://api.tail.icu/api/v2/DailyFursuit/id?qq={}&timestamp={}&sign={}&id={}".format(sign[1],str(ts),prsign,dayid)
         )
         text = json.loads(resp._body)
         return text
@@ -134,19 +103,7 @@ class Tailapi:
         http = urllib3.PoolManager()
         resp = http.request(
             "GET",
-            "https://api.tail.icu/api/v2/DailyFursuit/name?qq="
-            + sign[1]
-            + "&timestamp="
-            + str(ts)
-            + "&sign="
-            + prsign
-            + "&name="
-            + name,
+            "https://api.tail.icu/api/v2/DailyFursuit/name?qq={}&timestamp={}&sign={}&name={}".format(sign[1],str(ts),prsign,name)
         )
         text = json.loads(resp._body)
         return text
-
-
-# api=Tailapi(os.path.normpath(os.path.abspath('../../')+"/config/bot.json"))
-# print(api.getFursuitByName("果糖"))
-# print(os.path.abspath('../../'))
