@@ -8,12 +8,13 @@ from graia.ariadne.connection.config import (
 )
 from graia.saya import Saya
 import json
+
 saya = create(Saya)
-with open('./config/bot.json') as f:
-	cfg = json.load(f)
+with open("./config/bot.json") as f:
+    cfg = json.load(f)
 app = Ariadne(
     connection=config(
-        int(cfg["bot"]["qq"]),  
+        int(cfg["bot"]["qq"]),
         cfg["bot"]["verifykey"],
         HttpClientConfig(host="http://localhost:8080"),
         WebsocketClientConfig(host="http://localhost:8080"),

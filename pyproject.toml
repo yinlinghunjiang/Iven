@@ -12,6 +12,10 @@ graia-saya = "^0.0.16"
 urllib3 = "^1.26.12"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+pre-commit = "^2.20.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
