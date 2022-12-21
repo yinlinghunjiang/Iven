@@ -7,17 +7,20 @@ from graia.ariadne.connection.config import (
     config,
 )
 from graia.saya import Saya
-import json
+from config import init_config
 
+# 初始化Saya
 saya = create(Saya)
-with open("./config/bot.json") as f:
-    cfg = json.load(f)
+
+# 读配置
+configs=init_config("./config/bot.json")
+
 app = Ariadne(
     connection=config(
-        int(cfg["bot"]["qq"]),
-        cfg["bot"]["verifykey"],
-        HttpClientConfig(host="http://localhost:8080"),
-        WebsocketClientConfig(host="http://localhost:8080"),
+        configs.mirai['qq'],
+        configs.mirai['verifykey'],
+        HttpClientConfig(host=configs.mirai['host']),
+        WebsocketClientConfig(host=configs.mirai['host']),
     ),
 )
 with saya.module_context():

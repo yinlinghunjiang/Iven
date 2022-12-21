@@ -1,10 +1,10 @@
 {
-    "tailapi":{
-        "key":"",
-        "qq":""
+    "mah":{
+        "qq": 1234567890,
+        "verifykey":"Imaverifykey",
+        "host":"http://localhost:8080/"
     },
-    "bot":{
-        "qq": 0,
-        "verifykey":""
+    "hugginFace":{
+        "token":""
     }
 }
