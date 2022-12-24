@@ -1,9 +1,9 @@
 from graia.ariadne.app import Ariadne
 from graia.ariadne.event.message import GroupMessage
 from graia.ariadne.message.chain import MessageChain
-from graia.ariadne.model import Group,Member
-from graia.ariadne.message.element import Image,At
-from graia.saya import Channel,Saya
+from graia.ariadne.model import Group, Member
+from graia.ariadne.message.element import Image, At
+from graia.saya import Channel, Saya
 import asyncio
 from graia.ariadne.util.cooldown import CoolDown
 import utils.detr_resnet
@@ -12,14 +12,17 @@ from graia.ariadne.message.parser.base import MatchContent
 from graia.broadcast.interrupt import InterruptControl
 from graia.broadcast.interrupt.waiter import Waiter
 from graia.saya.builtins.broadcast.schema import ListenerSchema
+
 saya = Saya.current()
 channel = Channel.current()
 inc = create(InterruptControl)
+
+
 @channel.use(
     ListenerSchema(
         listening_events=[GroupMessage],
         decorators=[MatchContent(".rec")],
-        inline_dispatchers=[CoolDown(30)]
+        inline_dispatchers=[CoolDown(30)],
     )
 )
 async def ero(app: Ariadne, group: Group, member: Member, message: MessageChain):
@@ -32,7 +35,7 @@ async def ero(app: Ariadne, group: Group, member: Member, message: MessageChain)
             if imgs == []:
                 return ""
             else:
-                img=imgs[0].url
+                img = imgs[0].url
                 return img
 
     try:
@@ -42,8 +45,10 @@ async def ero(app: Ariadne, group: Group, member: Member, message: MessageChain)
     else:
         imgs = ret_msg
         if imgs != "":
-            await app.send_message(group, MessageChain([At(member.id)," 正在识别中，请稍等"]))
-            res=await utils.detr_resnet.query(imgs)
-            await app.send_message(group,MessageChain([At(member.id)," 识别结果如下：\n",Image(base64=res)]))
+            await app.send_message(group, MessageChain([At(member.id), " 正在识别中，请稍等"]))
+            res = await utils.detr_resnet.query(imgs)
+            await app.send_message(
+                group, MessageChain([At(member.id), " 识别结果如下：\n", Image(base64=res)])
+            )
         else:
             await app.send_message(group, MessageChain("未检测到图片或图片失效，请30s后重试"))

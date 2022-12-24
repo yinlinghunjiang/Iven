@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "iven"
 version = "0.1.0"
-description = "A simple transfur bot powered by ariadne"
+description = "A simple bot powered by ariadne"
 authors = ["yinlinghunjiang <1581647952@qq.com>"]
 readme = "README.md"
 
@@ -10,6 +10,10 @@ python = "^3.10"
 graia-ariadne = {extras = ["standard"], version = "^0.9.6"}
 graia-saya = "^0.0.16"
 urllib3 = "^1.26.12"
+ariadne = "^0.17.0"
+asyncio = "^3.4.3"
+opencv-python = "^4.6.0.66"
+aiohttp = "^3.8.3"
 
 
 [tool.poetry.group.dev.dependencies]

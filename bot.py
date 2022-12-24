@@ -13,14 +13,14 @@ from config import init_config
 saya = create(Saya)
 
 # 读配置
-configs=init_config("./config/bot.json")
+configs = init_config("./config/bot.json")
 
 app = Ariadne(
     connection=config(
-        configs.mirai['qq'],
-        configs.mirai['verifykey'],
-        HttpClientConfig(host=configs.mirai['host']),
-        WebsocketClientConfig(host=configs.mirai['host']),
+        configs.mirai["qq"],
+        configs.mirai["verifykey"],
+        HttpClientConfig(host=configs.mirai["host"]),
+        WebsocketClientConfig(host=configs.mirai["host"]),
     ),
 )
 with saya.module_context():

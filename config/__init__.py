@@ -5,8 +5,9 @@ import json
     用于读json数据
     :param config_path: The path of config.
     :var config_path: str
-    
+
 """
+
 
 def init_config(config_path: str):
     global CONFIG
@@ -15,7 +16,6 @@ def init_config(config_path: str):
 
 
 class Config:
-
     def __init__(self, config_path: str):
         self.config_path = config_path
         self.config = self.load_config()
